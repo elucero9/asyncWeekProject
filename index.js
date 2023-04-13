@@ -22,28 +22,29 @@ const stageAnimation = anime.timeline({
     loop: true,
     autoplay: false,
 })
-.add({
-    translateX: () => anime.random(-250, 250),
-    translateY: () => anime.random(-250, 250),
+.add({ //spread the grid boxes to random spots
+    translateX: () => anime.random((-window.innerWidth-100), window.innerWidth-100),
+    translateY: () => anime.random((-window.innerHeight-100), window.innerHeight-100),
+    //starts the spread from the last grid box
     delay: anime.stagger(200, { grid: grid, from: 'last' }),
-    scale: .5,
-    backgroundColor: 'purple',
+    scale: .5, //scale of the dot
+    backgroundColor: '#797ef6',
     borderRadius: '50%',
 })
-.add({
+.add({ //rotates the canvas
     targets: canvas,
-    rotate: 180,
-    duration: 2000,
+    rotate: 900,
+    duration: 5000,
     easing: 'easeOutBounce',
 })
-.add({
+.add({//brings back to normal
     translateX: 0,
     translateY: 0,
     delay: anime.stagger(5, { grid: grid, from: 'center' }),
     duration: 3000,
-    backgroundColor: '',
+    backgroundColor: '#1aa7ec',
 })
-.add({
+.add({// stagger animation starts at the first grid box
     translateX: [
         {
             value: anime.stagger('-.1em', {
@@ -92,10 +93,10 @@ const stageAnimation = anime.timeline({
     ],
     delay: anime.stagger(100, { grid: grid, from: 'last' }),
     scale: .7,
-    backgroundColor: 'green',
+    backgroundColor: '#1e2f97',
     borderRadius: 0,
 })
-.add({
+.add({ //last animation starts in the center
     translateX: [
         {
             value: anime.stagger('-5px', {
@@ -144,8 +145,7 @@ const stageAnimation = anime.timeline({
     ],
     delay: anime.stagger(100, { grid: grid, from: 'center' }),
     scale: 1,
-    backgroundColor: 'yellow',
+    backgroundColor: '#ffffff',
 })
 
 stageAnimation.play();
-

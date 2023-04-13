@@ -2,7 +2,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: black;
+    background-color: #4adede;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,10 +17,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: lightblue; */
 }
 
-.tail{
+.tail {
     width: 10px;
     height: 10px;
     background-color: white;
