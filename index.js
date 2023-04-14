@@ -1,5 +1,6 @@
 const canvas = document.querySelector('.canvas');
 const fragment = document.createDocumentFragment();
+const btn = document.querySelector('button');
 const grid = [20, 20];
 const col = grid[0];
 const row = grid[1];
@@ -148,4 +149,8 @@ const stageAnimation = anime.timeline({
     backgroundColor: '#ffffff',
 })
 
-stageAnimation.play();
+// btn.addEventListener('click', () => {
+//     stageAnimation.play();
+// } )
+
+// stageAnimation.play();
